@@ -1,0 +1,60 @@
+<div class="container">
+    <h2>Chỉnh sửa bài viết</h2>
+    <form class="row g-3" method="post" action="/admin/article/update/<%= article._id %>">
+        <div class="col-12">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" name="title" id="title" value="<%= article.title %>" required>
+        </div>
+        <div class="col-12">
+            <label for="category" class="form-label">Category</label>
+            <select name="category" id="category" class="form-select">
+                <% categories.forEach(category => { %>
+                    <option value="<%= category._id %>" <%= article.categoryId.toString() === category._id.toString() ? 'selected' : '' %>>
+                        <%= category.name %>
+                    </option>
+                <% }) %>
+            </select>
+        </div>
+        <div class="col-12">
+            <label for="description" class="form-label">Description</label>
+            <textarea id="description" name="description" class="form-control"><%= article.description %></textarea>
+        </div>
+        <div class="col-12">
+            <label for="author" class="form-label">Author</label>
+            <input type="text" class="form-control" id="author" name="author" value="<%= article.author %>" required>
+        </div>
+        <div class="col-12">
+            <label for="status" class="form-label">Status</label>
+            <select name="status" class="form-select" required>
+                <option value="">Select a status</option>
+                <option value="chua_duyet" <%= article.status === 'chua_duyet' ? 'selected' : '' %>>Chưa duyệt</option>
+                <option value="duyet" <%= article.status === 'duyet' ? 'selected' : '' %>>Duyệt</option>
+                <option value="da_xoa" <%= article.status === 'da_xoa' ? 'selected' : '' %>>Đã xóa</option>
+            </select>
+        </div>
+
+        <div class="col-12">
+            <label for="content" class="form-label">Content</label>
+            <textarea id="content" name="content" class="form-control"><%= article.content %></textarea>
+            <script>
+                // Khởi tạo CKEditor cho textarea
+                CKEDITOR.replace('content');
+            </script>
+        </div>
+        <div class="col-12 mt-5">
+            <button type="submit" class="btn btn-primary" name="submit">Update</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.querySelector('form').addEventListener('submit', function (e) {
+        var title = document.getElementById('title').value;
+        var author = document.getElementById('author').value;
+
+        if (!title || !author) {
+            e.preventDefault();
+            alert("Title and Author are required fields.");
+        }
+    });
+</script>

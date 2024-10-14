@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Edit Category</h2>
+    <form class="row g-3" method="post" action="/admin/category/update/<%= category._id %>">
+        <div class="col-12">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" name="title" id="title" value="<%= category.name %>" required>
+        </div>
+        <div class="col-12">
+            <label for="status" class="form-label">Status</label>
+            <select class="form-select" name="status" id="status">
+                <option value="hoạt động" <%= category.status === 'hoạt động' ? 'selected' : '' %>>Hoạt động</option>
+                <option value="đã xóa" <%= category.status === 'đã xóa' ? 'selected' : '' %>>Đã xóa</option>
+            </select>
+        </div>
+        <div class="col-12 mt-5">
+            <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+    </form>
+</div>

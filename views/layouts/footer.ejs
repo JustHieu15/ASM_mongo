@@ -1,0 +1,111 @@
+<footer class="footer-section">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-top-content">
+                        <div class="footer-logo">
+                            <div class="footer-logo">
+                                <a href="index.html"
+                                ><img
+                                            alt="image"
+                                            class="img-fluid dark"
+                                            src="/assets/svg1.svg"
+                                    /></a>
+                                <a href="index.html"
+                                ><img
+                                            alt="image"
+                                            class="img-fluid light"
+                                            src="/assets/svg1.svg"
+                                    /></a>
+                            </div>
+                            <p>
+                                Welcome! Feel free to mix and match
+                                these subcategories based on your
+                                interests and the preferences of your
+                                target audience. Health & Wellness is a
+                                diverse niche.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-6">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-widget">
+                        <div class="widget-title">
+                            <h3>Categories</h3>
+                        </div>
+                        <ul class="widget-list">
+                            <% if (categories && categories.length > 0) { %>
+                                <% categories.forEach(category => { %>
+                                    <% if (category.status === 'hoạt động') { %>
+                                        <li>
+                                            <a href="/admin/category/view/<%= category._id %>">
+                                                <%= category.name %>
+                                                <svg
+                                                        width="10"
+                                                        height="10"
+                                                        viewBox="0 0 10 10"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                            d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
+                                                            stroke="#191919"
+                                                            stroke-width="1.5"
+                                                            stroke-linecap="round"
+                                                    />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                    <% } %>
+                                <% }); %>
+                            <% } else { %>
+                                <li>No categories available.</li>
+                            <% } %>
+                        </ul>
+
+                    </div>
+                </div>
+                <div
+                        class="col-lg-4 col-md-6 d-flex justify-content-lg-center justify-content-md-end"
+                >
+                    <div class="footer-widget">
+                        <div class="widget-title">
+                            <h3>Featured Post</h3>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="img-section">
+                                    <a
+                                            href="standard-formate.html"
+                                            class="gallery-img"
+                                    >
+                                        <img
+                                                src="/assets/image/health&wellness/image-(23).png"
+                                                alt
+                                        />
+                                    </a>
+                                    <div class="img-content">
+                                        <a
+                                                href="health-and-wellness-category.html"
+                                        >06 January, 2024</a
+                                        >
+                                        <h6>
+                                            <a
+                                                    href="standard-formate.html"
+                                            >A Guide to Better Sleep
+                                                Habits.</a
+                                            >
+                                        </h6>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

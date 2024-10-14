@@ -1,0 +1,110 @@
+<div class="blog-post mb-120">
+    <div class="container">
+        <div class="row g-lg-4 gy-4">
+            <div class="col-lg-8">
+                <div class="row gy-5 mb-70">
+                    <% if(articles && articles.length > 0) { %>
+                        <% articles.forEach((article) => { %>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="blog-area">
+                                    <div class="blog-card">
+                                        <div class="blog-content-1">
+                                            <h5>
+                                                <a href="#"> <%= new Date(article.createdAt).toLocaleDateString() %> </a>
+                                            </h5>
+                                            <h3>
+                                                <a href="/detail/<%= article.slug %>/<%= article._id %>"><%= article.title %></a>
+                                            </h3>
+                                        </div>
+                                        <div class="blog-image">
+                                            <a href="#">
+                                                <img class="img-fluid" src="" alt/>
+                                            </a>
+                                        </div>
+                                        <div class="blog-bottom-content">
+                                            <div class="blog-author">
+                                                <div class="author-img">
+                                                    <img src="/assets/image/health&wellness/Image-10.png" alt/>
+                                                </div>
+                                                <div class="author-name">
+                                                    <a href="#"> <%= article.author %> </a>
+                                                </div>
+                                            </div>
+                                            <div class="blog-btn">
+                                                <a href="/detail/<%= article._id %>">
+                                                    View
+                                                    <svg class="arrow" width="10" height="10" viewBox="0 0 10 10"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
+                                                              stroke-width="1.5" stroke-linecap="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }) %>
+                    <% } %>
+                </div>
+                <!-- Pagination -->
+                <div class="pagination">
+                    <ul class="pagination">
+                        <% if (currentPage > 1) { %>
+                            <li class="page-item">
+                                <a class="page-link" href="?page=<%= currentPage - 1 %>" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                        <% } %>
+
+                        <% for (let i = 1; i <= totalPages; i++) { %>
+                            <li class="page-item <%= currentPage === i ? 'active' : '' %>">
+                                <a class="page-link" href="?page=<%= i %>"><%= i %></a>
+                            </li>
+                        <% } %>
+
+                        <% if (currentPage < totalPages) { %>
+                            <li class="page-item">
+                                <a class="page-link" href="?page=<%= currentPage + 1 %>" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        <% } %>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-lg-4">
+                <div class="health-sidebar-area">
+                    <div class="single-widget mb-30">
+                        <h6>Trending Post</h6>
+                        <div class="recent-post-widget">
+                            <div class="recent-post-img">
+                                <a href="/detail"
+                                ><img
+                                            src="/assets/image/health&wellness/sidber-img-3.png"
+                                            alt
+                                    /></a>
+                            </div>
+                            <div class="recent-post-content">
+                                <a
+                                        href="health-and-wellness-category.html"
+                                >05 January, 2024</a
+                                >
+                                <h5>
+                                    <a href="standard-formate.html"
+                                    >A Guide to Better Sleep
+                                        Habits.</a
+                                    >
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

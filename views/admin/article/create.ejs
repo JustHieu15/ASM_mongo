@@ -1,0 +1,57 @@
+<div class="container">
+    <h2>Tạo bài viết</h2>
+    <form class="row g-3" method="post" action="store">
+        <div class="col-12">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" name="title" id="title" value="" required>
+        </div>
+        <div class="col-12">
+            <label for="img-link" class="form-label">IMG-LINK</label>
+            <input type="text" class="form-control" id="img-link" name="img-link">
+        </div>
+        <div class="col-12">
+            <label for="category" class="form-label">Category</label>
+            <select name="category" id="category" class="form-select" required>
+                <option value="">Select a category</option>
+                <% if (categories && categories.length > 0) { %>
+                    <% categories.forEach(category => { %>
+                        <% if (category.status === 'hoạt động') { %>
+                            <option value="<%= category._id %>"><%= category.name %></option>
+                        <% } %>
+                    <% }); %>
+                <% } %>
+            </select>
+        </div>
+        <div class="col-12">
+            <label for="description" class="form-label">Description</label>
+            <textarea id="description" name="description" class="form-control"></textarea>
+        </div>
+        <div class="col-12">
+            <label for="author" class="form-label">Author</label>
+            <input type="text" class="form-control" id="author" name="author" value="" required>
+        </div>
+        <div class="col-12">
+            <label for="content" class="form-label">Content</label>
+            <textarea id="content" name="content" class="form-control"></textarea>
+            <script>
+                // Khởi tạo CKEditor cho textarea
+                CKEDITOR.replace('content');
+            </script>
+        </div>
+        <div class="col-12 mt-5">
+            <button type="submit" class="btn btn-primary" name="submit">Create</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.querySelector('form').addEventListener('submit', function (e) {
+        var title = document.getElementById('title').value;
+        var author = document.getElementById('author').value;
+
+        if (!title || !author) {
+            e.preventDefault();
+            alert("Title and Author are required fields.");
+        }
+    });
+</script>

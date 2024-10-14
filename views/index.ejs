@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css"/>
+
+  <link rel="stylesheet" href="/assets/css/jquery.fancybox.min.css"/>
+
+  <link rel="stylesheet" href="/assets/css/animate.css"/>
+  <link rel="stylesheet" href="/assets/css/nice-select.css"/>
+
+  <link rel="stylesheet" href="/assets/css/bootstrap-icons.min.css"/>
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css"/>
+
+  <link rel="stylesheet" href="/assets/css/boxicons.min.css"/>
+
+  <link rel="stylesheet" href="/assets/css/style.css"/>
+  <title>Blog</title>
+</head>
+
+<body id="body" class="background-img">
+<div class="circle-container">
+  <svg
+          class="circle-progress svg-content"
+          width="100%"
+          height="100%"
+          viewBox="-1 -1 102 102"
+  >
+    <path
+            d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+            style="
+                        transition: stroke-dashoffset 10ms linear 0s;
+                        stroke-dasharray: 307.919;
+                        stroke-dashoffset: 256.939;
+                    "
+    ></path>
+  </svg>
+</div>
+
+<!--Sidebar-->
+<%- include('./layouts/sidebar') %>
+
+<!-- Header -->
+<%- include('./layouts/header') %>
+
+<div class="banner-area mb-35">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 position-relative">
+        <div class="slider-btn-groups">
+          <div class="slider-btn prev-1">
+            <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M0.416666 8.96667H15V7.71667H0.416666V8.96667Z"
+              />
+              <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M1.04115 7.71667C3.98115 7.71667 6.38281 10.3017 6.38281 13.0583V13.6833H5.13281V13.0583C5.13281 10.9658 3.26448 8.96667 1.04115 8.96667H0.416979V7.71667H1.04115Z"
+              />
+              <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M1.04115 8.96667C3.98115 8.96667 6.38281 6.38167 6.38281 3.625V3H5.13281V3.625C5.13281 5.71833 3.26448 7.71667 1.04115 7.71667H0.416979V8.96667H1.04115Z"
+              />
+            </svg>
+          </div>
+          <div class="slider-btn next-1">
+            <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M15.5833 8.96667H1V7.71667H15.5833V8.96667Z"
+              />
+              <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M14.9589 7.71667C12.0189 7.71667 9.61719 10.3017 9.61719 13.0583V13.6833H10.8672V13.0583C10.8672 10.9658 12.7355 8.96667 14.9589 8.96667H15.583V7.71667H14.9589Z"
+              />
+              <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M14.9589 8.96667C12.0189 8.96667 9.61719 6.38167 9.61719 3.625V3H10.8672V3.625C10.8672 5.71833 12.7355 7.71667 14.9589 7.71667H15.583V8.96667H14.9589Z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="swiper home1-banner-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div
+                      class="helth-banner"
+                      style="
+                                            background-image: url(/assets/image/health&wellness/banner-imh.png);
+                                        "
+              >
+                <div class="banner-content">
+                  <a
+                          href="health-and-wellness-category.html"
+                  >
+                    <span>Life Fitness</span>
+                  </a>
+                  <h1>
+                    High-Intensity Workouts for
+                    Maximum Impact.
+                  </h1>
+                  <div class="banner-content-bottom">
+                    <div class="author-area">
+                      <div class="author-img">
+                        <img
+                                src="/assets/image/health&wellness/Image-10.png"
+                                alt
+                        />
+                      </div>
+                      <div class="author-name">
+                        <a
+                                href="editor-profile.html"
+                        >Dr. Daniel Scoot</a
+                        >
+                      </div>
+                    </div>
+                    <div class="publish-date">
+                      <a
+                              href="health-and-wellness-category.html"
+                      >18 January, 2024</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                      class="helth-banner"
+                      style="
+                                            background-image: url(/assets/image/health&wellness/banner-imh.png);
+                                        "
+              >
+                <div class="banner-content">
+                  <a
+                          href="health-and-wellness-category.html"
+                  >
+                    <span>Meditation</span>
+                  </a>
+                  <h1>
+                    Mental Health Matters Breaking
+                    the Stigma.
+                  </h1>
+                  <div class="banner-content-bottom">
+                    <div class="author-area">
+                      <div class="author-img">
+                        <img
+                                src="/assets/image/health&wellness/Image-10.png"
+                                alt
+                        />
+                      </div>
+                      <div class="author-name">
+                        <a
+                                href="editor-profile.html"
+                        >Dr. Daniel Scoot</a
+                        >
+                      </div>
+                    </div>
+                    <div class="publish-date">
+                      <a
+                              href="health-and-wellness-category.html"
+                      >18 January, 2024</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                      class="helth-banner"
+                      style="
+                                            background-image: url(/assets/image/health&wellness/banner-imh.png);
+                                        "
+              >
+                <div class="banner-content">
+                  <a
+                          href="health-and-wellness-category.html"
+                  >
+                    <span>Life Fitness</span>
+                  </a>
+                  <h1>
+                    Harnessing the Power of the
+                    Presen.
+                  </h1>
+                  <div class="banner-content-bottom">
+                    <div class="author-area">
+                      <div class="author-img">
+                        <img
+                                src="/assets/image/health&wellness/Image-10.png"
+                                alt
+                        />
+                      </div>
+                      <div class="author-name">
+                        <a
+                                href="editor-profile.html"
+                        >Dr. Daniel Scoot</a
+                        >
+                      </div>
+                    </div>
+                    <div class="publish-date">
+                      <a
+                              href="health-and-wellness-category.html"
+                      >18 January, 2024</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main -->
+<%- body%>
+
+<!-- Footer -->
+<%- include('./layouts/footer') %>
+
+<script src="/assets/js/jquery-3.7.1.min.js"></script>
+<script src="/assets/js/jquery-ui.js"></script>
+
+<script src="/assets/js/waypoints.js"></script>
+<script src="/assets/js/jquery.counterup.min.js"></script>
+
+<script src="/assets/js/jquery.marquee.min.js"></script>
+
+<script src="/assets/js/wow.min.js"></script>
+
+<script src="/assets/js/popper.min.js"></script>
+
+<script src="/assets/js/swiper-bundle.min.js"></script>
+
+<script src="/assets/js/jquery.fancybox.min.js"></script>
+<script src="/assets/js/jquery.nice-select.min.js"></script>
+<script src="/assets/js/wow.min.js"></script>
+
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/boxicons.min.js"></script>
+
+<script src="/assets/js/custom.js"></script>
+<script>
+  $(".marquee_text").marquee({
+    direction: "left",
+    duration: 45000,
+    gap: 50,
+    delayBeforeStart: 0,
+    duplicated: true,
+    startVisible: true,
+  });
+</script>
+</body>
+
