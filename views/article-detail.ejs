@@ -141,6 +141,37 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-4">
+                <div class="health-sidebar-area">
+                    <div class="single-widget mb-30">
+                        <h6>Trending Post</h6>
+                        <% if(articles && articles.length > 0) { %>
+                            <% articles.forEach((article) => { %>
+                                <div class="recent-post-widget">
+                                    <div class="recent-post-img">
+                                        <a href="/detail/<%= article.slug %>/<%= article._id %>"
+                                        ><img
+                                                    src="/assets/image/health&wellness/sidber-img-3.png"
+                                                    alt
+                                            /></a>
+                                    </div>
+                                    <div class="recent-post-content">
+                                        <a
+                                                href="/detail/<%= article.slug %>/<%= article._id %>"
+                                        ><%= new Date(article.createdAt).toLocaleDateString() %></a
+                                        >
+                                        <h5>
+                                            <a href="/detail/<%= article.slug %>/<%= article._id %>"
+                                            ><%= article.title %>.</a
+                                            >
+                                        </h5>
+                                    </div>
+                                </div>
+                            <% }) %>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

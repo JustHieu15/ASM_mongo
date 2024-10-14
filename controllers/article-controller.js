@@ -160,7 +160,7 @@ class ArticleController {
 
     async crawlAndCreateArticle(req, res) {
         try {
-            const url = "https://dantri.com.vn/the-thao/lamine-yamal-bi-loai-khoi-tuyen-tay-ban-nha-barcelona-lo-sot-vo-20241014125443808.htm";
+            const url = "https://dantri.com.vn/the-thao/bao-thai-lan-buc-xuc-trong-tai-xu-ep-indonesia-keu-oan-cho-tuyen-viet-nam-20241011192815181.htm";
             const newArticle = await articleService.crawlData(url);
 
             if (newArticle) {

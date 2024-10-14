@@ -27,6 +27,16 @@ class ArticleRepository {
         return Article.findById(id).populate('categoryId', 'name');
     }
 
+    //Lấy bài viết theo categoryId
+    async getArticleByCategory(id, page = 1, limit = 5) {
+        const articles = await Article.find({ categoryId: id })
+            .populate('categoryId', 'name')
+            .skip((page - 1) * limit)
+            .limit(limit);
+        const count = await Article.countDocuments();
+        return { articles, totalPages: Math.ceil(count / limit), currentPage: page };
+    }
+
     //Lấy theo ID và slug
     async getArticlebyIdAndSlug(slug, id) {
         return Article.findOne({ slug, _id: id }).populate('categoryId', 'name');

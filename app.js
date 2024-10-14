@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var puppeteer = require("puppeteer");
+const { setupCronJobs } = require('./setupCron');
 
 /* express - layouts */
 const expressLayouts = require('express-ejs-layouts');
@@ -33,6 +33,9 @@ app.use(expressLayouts);
 /* use Routes */
 app.use('/', indexRouter);
 app.use('/admin', adminRouter);
+
+// Gọi hàm để thiết lập CronJobs
+setupCronJobs();
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

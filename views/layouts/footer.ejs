@@ -75,34 +75,37 @@
                         <div class="widget-title">
                             <h3>Featured Post</h3>
                         </div>
-                        <ul>
-                            <li>
-                                <div class="img-section">
-                                    <a
-                                            href="standard-formate.html"
-                                            class="gallery-img"
-                                    >
-                                        <img
-                                                src="/assets/image/health&wellness/image-(23).png"
-                                                alt
-                                        />
-                                    </a>
-                                    <div class="img-content">
-                                        <a
-                                                href="health-and-wellness-category.html"
-                                        >06 January, 2024</a
-                                        >
-                                        <h6>
+                        <% if(articles && articles.length > 0) { %>
+                            <% articles.forEach((article) => { %>
+                                <ul>
+                                    <li>
+                                        <div class="img-section">
                                             <a
-                                                    href="standard-formate.html"
-                                            >A Guide to Better Sleep
-                                                Habits.</a
+                                                    href="/detail/<%= article.slug %>/<%= article._id %>"
+                                                    class="gallery-img"
                                             >
-                                        </h6>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                                                <img
+                                                        src="/assets/image/health&wellness/image-(23).png"
+                                                        alt
+                                                />
+                                            </a>
+                                            <div class="img-content">
+                                                <a
+                                                        href="/detail/<%= article.slug %>/<%= article._id %>"
+                                                ><%= new Date(article.createdAt).toLocaleDateString() %></a
+                                                >
+                                                <h6>
+                                                    <a
+                                                            href="/detail/<%= article.slug %>/<%= article._id %>"
+                                                    ><%= article.title %></a
+                                                    >
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            <% }) %>
+                        <% } %>
                     </div>
                 </div>
             </div>

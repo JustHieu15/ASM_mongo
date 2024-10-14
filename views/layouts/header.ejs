@@ -119,7 +119,7 @@
                                         <% categories.forEach(category => { %>
                                             <% if(category.status === 'hoạt động') { %>
                                                 <li>
-                                                    <a href="/admin/category/view/<%= category._id %>"><%= category.name %></a>
+                                                    <a href="/article/<%= category._id %>"><%= category.name %></a>
                                                 </li>
                                             <% } %>
                                         <% }); %>

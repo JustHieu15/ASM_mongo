@@ -35,6 +35,14 @@ class ArticleService {
         return await articleRepository.getArticleById(id);
     }
 
+    async getArticleByCategory(categoryId, page, limit) {
+        try {
+            return await articleRepository.getArticleByCategory(categoryId, page, limit); // Gọi hàm từ repository
+        } catch (error) {
+            throw new Error('Error in service while fetching articles: ' + error.message);
+        }
+    }
+
     async getArticleByIdAndSlug (slug, id) {
         return await articleRepository.getArticlebyIdAndSlug(slug, id)
     }
@@ -88,7 +96,7 @@ class ArticleService {
 
             return {
                 title: titleEl ? titleEl.innerText : null,
-                content: convert.join('\n\n'), // Nối các phần tử thành một chuỗi, mỗi phần tử cách nhau bằng hai dòng
+                content: convert.join('\n'), //
                 author: authorEl ? authorEl.innerText : "Tác giả không xác định",
             };
         });
@@ -111,27 +119,5 @@ class ArticleService {
     }
 
 }
-
-
-//CronJob
-cron.schedule(
-    "0 7 * * *",
-    async () => {
-        console.log("Starting crawler at 7 AM VN time...");
-
-        const articleService = new ArticleService();
-        try {
-            const url = "https://dantri.com.vn/the-thao/haaland-co-phan-ung-gay-phan-no-sau-tham-bai-voi-ty-so-1-5-20241014104544093.htm";
-            await articleService.crawlData(url);
-            console.log("Crawling completed successfully.");
-        } catch (error) {
-            console.error("Error during crawling:", error);
-        }
-    },
-    {
-        timezone: "Asia/Ho_Chi_Minh",
-    }
-);
-
 
 module.exports = new ArticleService();

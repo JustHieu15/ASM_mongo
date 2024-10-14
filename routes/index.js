@@ -12,4 +12,8 @@ router.get('/detail/:slug/:id', async function(req, res, next) {
   await indexController.renderArticle(req, res)
 })
 
+router.get('/article/:category', async function(req, res, next) {
+  await indexController.renderArticleByCategory(req, res)
+})
+
 module.exports = router;
